@@ -13,6 +13,12 @@ ol, ul {
   display: table;
 }
 
+.buttonEvidenziato {
+  background-color: red;
+  font-style: bold;
+  color: yellow;
+}
+
 .status {
   margin-bottom: 10px;
 }

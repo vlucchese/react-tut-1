@@ -136,6 +136,7 @@ class Game extends React.Component {
     const winner = calculateWinner(current.squares);
 
     const moves = history.map((step, move) => {
+      let myStyleButton = "";
       const desc = move ?
         'Go to move #' + move
         + ' '
@@ -143,9 +144,14 @@ class Game extends React.Component {
         + ' in '
         + calculateColRow(this.state.buttonClicked[move-1]) :
         'Go to game start';
+        if(move===this.state.stepNumber){
+          myStyleButton = "buttonEvidenziato";
+        }else{
+          myStyleButton = "";
+        }
       return (
         <li key={move}>
-          <button onClick={() => this.jumpTo(move)}>{desc}</button>
+          <button class={myStyleButton} onClick={() => this.jumpTo(move)}>{desc}</button>
         </li>
       );
     });
